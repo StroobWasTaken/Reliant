@@ -4,69 +4,6 @@ if %debug% == "true" (
     @echo on
 )
 
-goto startup
-:startup
-set gitcommit=e3f6ed3
-set relversion=%gitcommit%/master
-set project=Reliant 1.11
-SETLOCAL EnableDelayedExpansion
-for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
-set "DEL=%%a"
-)
-
-goto checkforupdates
-
-:checkforupdates
-echo [Reliant] Checking for updates...
-if exist "Reliant-New.bat" (
-    rename "Reliant-New.bat" "Reliant.bat"
-)
-
-if exist "assets\updater\updates.txt" (
-    del "assets\updater\updates.txt"
-)
-
-if not exist "assets\updater\" (
-    mkdir "assets\updater"
-)
-
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://arcanecici.github.io/Reliant/updates.txt' -OutFile '%CD%\assets\updater\updates.txt'"
-set /p updatescommit=<"assets\updater\updates.txt"
-
-if not %updatescommit% == %gitcommit% (
-    goto updatereliant
-) else (
-    echo [Reliant] No updates found, starting Reliant...
-    goto checks
-)
-
-:updatereliant
-echo [Reliant] Downloading Update...
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://arcanecici.github.io/Reliant/Reliant.bat' -OutFile '%CD%\Reliant-New.bat'"
-del "assets\settings\changelog.txt"
-powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/ArcaneCiCi/Reliant/master/changelog.txt' -OutFile 'assets\settings\changelog.txt'"
-echo [Reliant] Update Downloaded, restarting...
-if exist "assets\settings\update.txt" (
-    break>"assets\settings\update.txt"
-    echo 1 >> "assets\settings\update.txt"
-)
-del "assets\updater\updates.txt"
-rmdir "assets\updater\"
-start cmd /k "Reliant-New.bat"
-timeout /t 3 /nobreak >nul
-del "Reliant.bat"
-exit
-
-:checks
-title %project% (%relversion%)
-if exist "assets\settings\" (
-    del /f "assets\updater\updates.txt"
-    goto welcome
-) else (
-    goto setup
-    del "assets\updater\updates.txt"
-)
-
 :setup
 cls
 echo.
